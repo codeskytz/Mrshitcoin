@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-dark font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+}
+
+@layer components {
+  /* Enhanced button components */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-600 focus:ring-primary-500
+           shadow-lg hover:shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-dark hover:bg-gray-200 focus:ring-gray-500;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white
+           focus:ring-primary-500;
+  }
+
+  /* Enhanced social media icons */
+  .social-icon {
+    @apply text-primary hover:animate-glow transition-all duration-300 text-2xl
+           hover:scale-110 hover:shadow-glow;
+  }
+
+  /* Navigation components */
+  .nav-link {
+    @apply hover:text-primary transition-colors duration-300 
+           focus:text-primary-600 focus:outline-none;
+  }
+
+  /* Card components */
+  .crypto-card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 
+           hover:-translate-y-2 hover:shadow-glow-lg border border-gray-100;
+  }
+
+  .stats-card {
+    @apply bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20;
+  }
+
+  /* Form components */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
+           focus:border-primary focus:ring-1 focus:ring-primary
+           transition-colors duration-200;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
+           focus:border-primary focus:ring-1 focus:ring-primary
+           transition-colors duration-200 resize-none;
+  }
+
+  /* Utility classes for animations */
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .slide-up {
+    @apply animate-slide-up;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
