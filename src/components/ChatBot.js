@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LanguageContext } from '../contexts/LanguageContext';
 import {
   ChatBubbleLeftRightIcon,
   XMarkIcon,
@@ -14,6 +15,7 @@ import ReactMarkdown from 'react-markdown';
 import geminiService from '../services/geminiService';
 
 const ChatBot = ({ isOpen, setIsOpen }) => {
+  const { getText } = useContext(LanguageContext);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -44,7 +46,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
           // Set welcome message
           const welcomeMessage = {
             id: uuidv4(),
-            text: "👋 Hi! I'm Mr Shitcoin's AI assistant. I'm here to help you with cryptocurrency and meme coin trading questions. How can I assist you today?",
+            text: getText('chatbotTitle'),
             isBot: true,
             timestamp: new Date().toISOString(),
             status: 'delivered'

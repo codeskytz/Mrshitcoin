@@ -1,75 +1,75 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpenIcon, VideoCameraIcon, BellIcon, CpuChipIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { LanguageContext } from '../contexts/LanguageContext';
 
-const services = [
+const ServicesComponent = () => {
+  const { getText } = useContext(LanguageContext);
+
+  const services = [
   {
-    title: 'Trading Books',
-    description: 'Comprehensive guides on meme coin trading strategies and market analysis.',
+    title: getText('tradingBooks'),
+    description: getText('aboutDescription'),
     icon: BookOpenIcon,
     price: '$49.99',
     originalPrice: '$79.99',
     features: [
-      'Complete trading strategies',
-      'Risk management techniques',
-      'Market psychology insights',
-      'Real case studies',
-      'Downloadable PDF format'
+      getText('strategy'),
+      getText('riskManagement'),
+      getText('marketInsights'),
+      getText('tradingService'),
+      getText('consultingService')
     ],
     popular: false,
   },
   {
-    title: 'Video Courses',
-    description: 'In-depth video tutorials covering everything from basics to advanced trading.',
+    title: getText('videoCourses'),
+    description: getText('productDesc'),
     icon: VideoCameraIcon,
     price: '$199.99',
     originalPrice: '$299.99',
     features: [
-      '20+ hours of content',
-      'Step-by-step tutorials',
-      'Live trading examples',
-      'Q&A sessions',
-      'Lifetime access',
-      'Course completion certificate'
+      getText('strategy'),
+      getText('tradingService'),
+      getText('marketInsights'),
+      getText('consultingService'),
+      getText('riskManagement')
     ],
     popular: true,
   },
   {
-    title: 'Signal Groups',
-    description: 'Real-time trading signals and market insights from our expert team.',
+    title: getText('signalGroups'),
+    description: getText('productDesc'),
     icon: BellIcon,
     price: '$99',
     period: '/month',
     originalPrice: '$149/month',
     features: [
-      'Daily trading signals',
-      'Market analysis updates',
-      'Entry & exit points',
-      'Risk/reward ratios',
-      'Community chat access',
-      'Mobile notifications'
+      getText('tradingService'),
+      getText('marketInsights'),
+      getText('strategy'),
+      getText('riskManagement'),
+      getText('consultingService')
     ],
     popular: false,
   },
   {
-    title: 'Trading Bots',
-    description: 'Automated trading bots with proven strategies for meme coins.',
+    title: getText('tradingBots'),
+    description: getText('aboutDescription'),
     icon: CpuChipIcon,
     price: '$299.99',
     originalPrice: '$499.99',
     features: [
-      'Pre-configured strategies',
-      '24/7 automated trading',
-      'Risk management built-in',
-      'Performance analytics',
-      'Multiple exchange support',
-      'Setup assistance included'
+      getText('strategy'),
+      getText('tradingService'),
+      getText('riskManagement'),
+      getText('marketInsights'),
+      getText('consultingService')
     ],
     popular: false,
   },
 ];
 
-const Services = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -108,11 +108,10 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-50 mb-4">
-            Our Services & Pricing
+            {getText('servicesTitle')}
           </h2>
           <p className="text-gray-600 dark:text-dark-300 max-w-3xl mx-auto text-lg">
-            Choose the perfect package to accelerate your meme coin trading journey. 
-            All services come with our satisfaction guarantee.
+            {getText('productDesc')}
           </p>
         </motion.div>
 
@@ -229,18 +228,17 @@ const Services = () => {
           className="text-center mt-16 p-8 bg-white dark:bg-dark-800 rounded-2xl shadow-soft"
         >
           <h3 className="text-2xl font-bold text-dark-900 dark:text-dark-50 mb-4">
-            Not sure which service is right for you?
+            {getText('servicesTitle')}
           </h3>
           <p className="text-gray-600 dark:text-dark-300 mb-6 max-w-2xl mx-auto">
-            Get personalized recommendations based on your trading experience and goals. 
-            Book a free 15-minute consultation call.
+            {getText('aboutDescription')}
           </p>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="btn btn-outline hover:btn-primary"
           >
-            Schedule Free Consultation
+            {getText('getStarted')}
           </motion.button>
         </motion.div>
       </div>
@@ -248,4 +246,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesComponent;

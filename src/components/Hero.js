@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
   const [isVisible, setIsVisible] = useState(false);
+  const { getText } = useContext(LanguageContext);
 
   // Progressive enhancement for animations
   useEffect(() => {
@@ -125,7 +127,7 @@ const Hero = () => {
                     role="status"
                     aria-label="Professional crypto trader">
                 <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse" aria-hidden="true"></span>
-                Professional Crypto Trader
+                {getText('tradingService')}
               </span>
             </motion.div>
 
@@ -133,7 +135,7 @@ const Hero = () => {
             <motion.div variants={itemVariants}>
               <h1 className="text-fluid-4xl sm:text-fluid-5xl font-heading font-bold
                            text-dark-900 dark:text-dark-50 leading-tight">
-                Hello, I'm{' '}
+                {getText('heroTitle')}{' '}
                 <span className="relative inline-block">
                   <span className="text-primary glow-text">Mr Shitcoin</span>
                   <motion.div
@@ -153,8 +155,7 @@ const Hero = () => {
               className="text-fluid-lg sm:text-fluid-xl text-dark-600 dark:text-dark-300 
                        max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
-              I teach how to trade meme coins through comprehensive courses, detailed books, 
-              engaging videos, real-time signals, and automated trading bots.
+              {getText('heroSubtitle')}
             </motion.p>
 
             {/* Stats */}
@@ -202,7 +203,7 @@ const Hero = () => {
                 aria-label="Explore products and services"
               >
                 <span className="flex items-center justify-center">
-                  Explore Products
+                  {getText('exploreProducts')}
                   <motion.svg 
                     className="ml-2 w-5 h-5" 
                     fill="none" 
@@ -240,7 +241,7 @@ const Hero = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Learn More
+                  {getText('learnMore')}
                 </span>
               </motion.button>
             </motion.div>
@@ -251,7 +252,7 @@ const Hero = () => {
               className="pt-8 border-t border-gray-200 dark:border-dark-700"
             >
               <p className="text-sm text-dark-500 dark:text-dark-400 mb-4 text-center lg:text-left">
-                Trusted by traders worldwide
+                {getText('aboutDescription')}
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 opacity-60">
                 {/* Trust badges/logos would go here */}
@@ -284,7 +285,7 @@ const Hero = () => {
             >
               <div className="relative z-10">
                 <img
-                  src="https://i.ibb.co/zDqw1Sz/Screenshot-2025-09-12-at-20-29-16-codeskytz-Instagram-photos-and-videos-removebg-preview.png"
+                  src="https://i.ibb.co/JFWFGRcb/Picsart-25-09-13-03-38-37-876.png"
                   alt="Mr Shitcoin - Professional cryptocurrency trader with expertise in meme coin trading"
                   className="w-full h-auto max-w-md mx-auto lg:max-w-lg xl:max-w-xl
                            filter drop-shadow-2xl

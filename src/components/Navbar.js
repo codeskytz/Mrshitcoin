@@ -1,13 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const mobileMenuRef = useRef(null);
+  const { getText } = useContext(LanguageContext);
 
   // Handle scroll effects
   useEffect(() => {
@@ -171,11 +174,11 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <div className="flex items-center space-x-1">
               {[
-                { to: 'home', label: 'Home' },
-                { to: 'products', label: 'Products' },
-                { to: 'services', label: 'Services' },
-                { to: 'about', label: 'About' },
-                { to: 'contact', label: 'Contact' }
+                { to: 'home', label: getText('home') },
+                { to: 'products', label: getText('products') },
+                { to: 'services', label: getText('services') },
+                { to: 'about', label: getText('about') },
+                { to: 'contact', label: getText('contact') }
               ].map((item) => (
                 <NavLink
                   key={item.to}
@@ -190,6 +193,8 @@ const Navbar = () => {
 
           {/* Right side controls */}
           <div className="flex items-center space-x-3">
+            {/* Language Toggle */}
+            <LanguageToggle />
             {/* Theme Toggle */}
             <ThemeToggle className="hidden sm:flex" />
             

@@ -1,0 +1,79 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6600;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ff6600;stop-opacity:0.05" />
+    </linearGradient>
+    
+    <linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700" />
+      <stop offset="100%" style="stop-color:#ffa500" />
+    </linearGradient>
+    
+    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6600" />
+      <stop offset="100%" style="stop-color:#ff8533" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#backgroundGradient)"/>
+  
+  <!-- Main trading screen -->
+  <rect x="50" y="100" width="300" height="200" rx="10" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+  
+  <!-- Chart lines -->
+  <polyline points="70,280 120,250 170,220 220,240 270,200 320,180" 
+            fill="none" stroke="url(#chartGradient)" stroke-width="3"/>
+  
+  <!-- Chart area -->
+  <polygon points="70,280 120,250 170,220 220,240 270,200 320,180 320,280 70,280" 
+           fill="url(#chartGradient)" opacity="0.2"/>
+  
+  <!-- Floating coins -->
+  <circle cx="450" cy="150" r="30" fill="url(#coinGradient)" opacity="0.9"/>
+  <text x="450" y="158" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="white">₿</text>
+  
+  <circle cx="550" cy="220" r="25" fill="url(#coinGradient)" opacity="0.8"/>
+  <text x="550" y="228" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">Ð</text>
+  
+  <circle cx="480" cy="300" r="20" fill="url(#coinGradient)" opacity="0.7"/>
+  <text x="480" y="307" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">🚀</text>
+  
+  <!-- Trading arrows -->
+  <path d="M600 200 L650 150" stroke="#22c55e" stroke-width="4" marker-end="url(#greenArrow)"/>
+  <path d="M620 350 L670 400" stroke="#ef4444" stroke-width="4" marker-end="url(#redArrow)"/>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="greenArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0,0 0,6 9,3" fill="#22c55e"/>
+    </marker>
+    <marker id="redArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0,0 0,6 9,3" fill="#ef4444"/>
+    </marker>
+  </defs>
+  
+  <!-- Laptop/computer -->
+  <rect x="200" y="400" width="400" height="250" rx="15" fill="#374151"/>
+  <rect x="220" y="420" width="360" height="200" rx="5" fill="#111827"/>
+  
+  <!-- Screen content -->
+  <rect x="240" y="440" width="100" height="60" fill="#ff6600" opacity="0.8" rx="3"/>
+  <rect x="360" y="450" width="80" height="8" fill="#22c55e" rx="2"/>
+  <rect x="360" y="470" width="60" height="8" fill="#ef4444" rx="2"/>
+  <rect x="360" y="490" width="90" height="8" fill="#3b82f6" rx="2"/>
+  
+  <!-- Keyboard -->
+  <rect x="230" y="630" width="340" height="15" rx="3" fill="#6b7280"/>
+  
+  <!-- Dollar signs floating -->
+  <text x="100" y="80" font-family="Arial" font-size="24" fill="#22c55e" opacity="0.7">$</text>
+  <text x="680" y="120" font-family="Arial" font-size="20" fill="#22c55e" opacity="0.6">$</text>
+  <text x="700" y="350" font-family="Arial" font-size="18" fill="#22c55e" opacity="0.5">$</text>
+  
+  <!-- Rocket emoji for meme coin hype -->
+  <text x="150" y="50" font-family="Arial" font-size="30" opacity="0.8">🚀</text>
+  <text x="650" y="80" font-family="Arial" font-size="25" opacity="0.7">📈</text>
+</svg>
