@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpenIcon, VideoCameraIcon, BellIcon, CpuChipIcon } from '@heroicons/react/24/outline';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const products = [
   {
@@ -26,13 +27,15 @@ const products = [
 ];
 
 const Products = () => {
+  const { getText } = useContext(LanguageContext);
+  
   return (
     <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-dark mb-4">Our Products</h2>
+          <h2 className="text-4xl font-bold text-dark mb-4">{getText('productsTitle')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Everything you need to succeed in meme coin trading
+            {getText('aboutDescription')}
           </p>
         </div>
 

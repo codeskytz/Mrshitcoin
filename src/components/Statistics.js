@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
-
-const stats = [
-  {
-    number: '10,000+',
-    label: 'Students Served',
-  },
-  {
-    number: '50,000+',
-    label: 'Website Visitors',
-  },
-  {
-    number: '5,000+',
-    label: 'Books & Courses Sold',
-  },
-];
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const Statistics = () => {
+  const { getText } = useContext(LanguageContext);
+  
+  const stats = [
+    {
+      number: '10,000+',
+      label: getText('students'),
+    },
+    {
+      number: '50,000+',
+      label: getText('visitors'),
+    },
+    {
+      number: '5,000+',
+      label: getText('booksSold'),
+    },
+  ];
   return (
     <section className="py-20 bg-primary">
       <div className="max-w-7xl mx-auto px-4">

@@ -1,0 +1,71 @@
+<svg width="600" height="450" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="450" fill="#f3f4f6"/>
+  
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6600;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:0.05" />
+    </linearGradient>
+    
+    <linearGradient id="personGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151" />
+      <stop offset="100%" style="stop-color:#6b7280" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="450" fill="url(#bgGrad)"/>
+  
+  <!-- Desk/table -->
+  <rect x="50" y="300" width="500" height="150" fill="#8b5cf6" opacity="0.8"/>
+  <rect x="50" y="280" width="500" height="20" fill="#7c3aed"/>
+  
+  <!-- Person silhouette -->
+  <!-- Head -->
+  <circle cx="300" cy="120" r="40" fill="url(#personGrad)"/>
+  
+  <!-- Body -->
+  <rect x="260" y="150" width="80" height="130" rx="10" fill="url(#personGrad)"/>
+  
+  <!-- Arms -->
+  <rect x="200" y="170" width="50" height="15" rx="7" fill="url(#personGrad)"/>
+  <rect x="350" y="170" width="50" height="15" rx="7" fill="url(#personGrad)"/>
+  
+  <!-- Multiple monitors -->
+  <rect x="100" y="200" width="120" height="80" rx="5" fill="#111827"/>
+  <rect x="110" y="210" width="100" height="60" rx="3" fill="#000000"/>
+  
+  <rect x="250" y="200" width="120" height="80" rx="5" fill="#111827"/>
+  <rect x="260" y="210" width="100" height="60" rx="3" fill="#000000"/>
+  
+  <rect x="400" y="200" width="120" height="80" rx="5" fill="#111827"/>
+  <rect x="410" y="210" width="100" height="60" rx="3" fill="#000000"/>
+  
+  <!-- Chart lines on screens -->
+  <polyline points="120,240 140,230 160,250 180,220 200,235" 
+            fill="none" stroke="#22c55e" stroke-width="2"/>
+            
+  <polyline points="270,250 290,230 310,240 330,220 350,210" 
+            fill="none" stroke="#ff6600" stroke-width="2"/>
+            
+  <polyline points="420,240 440,260 460,230 480,245 500,225" 
+            fill="none" stroke="#ef4444" stroke-width="2"/>
+  
+  <!-- Floating crypto symbols -->
+  <text x="80" y="50" font-family="Arial" font-size="20" fill="#ff6600" opacity="0.7">₿</text>
+  <text x="520" y="60" font-family="Arial" font-size="18" fill="#ff6600" opacity="0.6">Ξ</text>
+  <text x="480" y="130" font-family="Arial" font-size="16" fill="#ff6600" opacity="0.5">Ð</text>
+  
+  <!-- Success indicators -->
+  <text x="50" y="400" font-family="Arial" font-size="24" fill="#22c55e" opacity="0.8">📈</text>
+  <text x="500" y="380" font-family="Arial" font-size="20" fill="#22c55e" opacity="0.7">💰</text>
+  <text x="150" y="350" font-family="Arial" font-size="18" fill="#22c55e" opacity="0.6">🚀</text>
+  
+  <!-- Coffee cup -->
+  <rect x="340" y="290" width="20" height="25" rx="2" fill="#8b4513"/>
+  <ellipse cx="350" cy="287" rx="12" ry="3" fill="#654321"/>
+  
+  <!-- Title overlay -->
+  <text x="300" y="420" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#374151" opacity="0.8">Mr Shitcoin - Professional Trader</text>
+</svg>
