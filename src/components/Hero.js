@@ -189,61 +189,18 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
             >
-              <motion.button
-                whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-                whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
-                className="btn btn-primary w-full sm:w-auto text-base px-8 py-4 shadow-glow
-                         hover:shadow-glow-lg transition-all duration-300
-                         focus:ring-4 focus:ring-primary/20
-                         touch-manipulation select-none min-h-[56px]"
-                onClick={() => {
-                  const productsElement = document.getElementById('products');
-                  productsElement?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                aria-label="Explore products and services"
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
               >
-                <span className="flex items-center justify-center">
-                  {getText('exploreProducts')}
-                  <motion.svg 
-                    className="ml-2 w-5 h-5" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    animate={prefersReducedMotion ? {} : { x: [0, 4, 0] }}
-                    transition={prefersReducedMotion ? {} : { duration: 2, repeat: Infinity }}
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </motion.svg>
-                </span>
-              </motion.button>
-
-              <motion.button
-                whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
-                whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
-                className="btn btn-outline w-full sm:w-auto text-base px-8 py-4
-                         hover:shadow-medium transition-all duration-300
-                         focus:ring-4 focus:ring-primary/20
-                         touch-manipulation select-none min-h-[56px]"
-                onClick={() => {
-                  const aboutElement = document.getElementById('about');
-                  aboutElement?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                aria-label="Learn more about Mr Shitcoin"
-              >
-                <span className="flex items-center justify-center">
-                  <svg 
-                    className="mr-2 w-5 h-5" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {getText('learnMore')}
-                </span>
-              </motion.button>
+                <a
+                  href="/my-story"
+                  className="btn btn-primary w-full sm:w-auto text-base px-8 py-4 shadow-glow hover:shadow-glow-lg transition-all duration-300 focus:ring-4 focus:ring-primary/20 touch-manipulation select-none min-h-[56px] font-bold"
+                  aria-label="Go to My Story"
+                >
+                  My Story
+                </a>
+              </motion.div>
             </motion.div>
 
             {/* Trust Indicators */}

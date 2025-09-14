@@ -162,8 +162,8 @@ const Navbar = () => {
               className="flex items-center space-x-2 cursor-pointer group"
               onClick={closeMobileMenu}
             >
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-xl shadow-glow-sm group-hover:shadow-glow transition-all duration-300">
-                <span className="text-white font-bold text-lg sm:text-xl"><img src="https://i.ibb.co/6RhNLL05/images.png" alt="Mrshitcoin as a poorr guy" className="rounded-xl mb-4 w-full max-w-xs mx-auto" onError={e => { e.target.src = '/logo192.png'; }} />
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl shadow-glow-sm group-hover:shadow-glow transition-all duration-300">
+                <span><img src="https://i.ibb.co/6RhNLL05/images.png" alt="Mrshitcoin as a poorr guy" className="rounded-xl mb-4 w-full max-w-xs mx-auto" onError={e => { e.target.src = '/logo192.png'; }} />
 </span>
               </div>
               <span className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-dark-900 dark:text-dark-50 group-hover:text-primary transition-colors duration-300">
