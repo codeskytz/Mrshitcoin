@@ -11,8 +11,8 @@ const ServicesComponent = () => {
     title: getText('tradingBooks'),
     description: getText('aboutDescription'),
     icon: BookOpenIcon,
-    price: '$49.99',
-    originalPrice: '$79.99',
+    price: '50K Tsh',
+    originalPrice: '100K Tsh',
     features: [
       getText('strategy'),
       getText('riskManagement'),
@@ -26,8 +26,8 @@ const ServicesComponent = () => {
     title: getText('videoCourses'),
     description: getText('productDesc'),
     icon: VideoCameraIcon,
-    price: '$199.99',
-    originalPrice: '$299.99',
+    price: '300K Tsh',
+    originalPrice: '1M Tsh',
     features: [
       getText('strategy'),
       getText('tradingService'),
@@ -41,9 +41,9 @@ const ServicesComponent = () => {
     title: getText('signalGroups'),
     description: getText('productDesc'),
     icon: BellIcon,
-    price: '$99',
+    price: '20K Tsh',
     period: '/month',
-    originalPrice: '$149/month',
+    originalPrice: '100K Tsh',
     features: [
       getText('tradingService'),
       getText('marketInsights'),
@@ -57,8 +57,8 @@ const ServicesComponent = () => {
     title: getText('tradingBots'),
     description: getText('aboutDescription'),
     icon: CpuChipIcon,
-    price: '$299.99',
-    originalPrice: '$499.99',
+    price: '200K Tsh',
+    originalPrice: '500K Tsh',
     features: [
       getText('strategy'),
       getText('tradingService'),
@@ -107,10 +107,10 @@ const ServicesComponent = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-50 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black dark:text-black mb-4">
             {getText('servicesTitle')}
           </h2>
-          <p className="text-gray-600 dark:text-dark-300 max-w-3xl mx-auto text-lg">
+          <p className="text-black dark:text-black max-w-3xl mx-auto text-lg font-semibold dark:font-bold">
             {getText('productDesc')}
           </p>
         </motion.div>
@@ -159,12 +159,12 @@ const ServicesComponent = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-center mb-3 text-dark-900 dark:text-dark-50">
+              <h3 className="text-xl font-black text-center mb-3 text-black dark:text-black dark:font-black">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 dark:text-dark-300 text-center mb-6 flex-grow">
+              <p className="text-black dark:text-black font-semibold text-center mb-6 flex-grow dark:font-bold">
                 {service.description}
               </p>
 
@@ -227,10 +227,10 @@ const ServicesComponent = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-16 p-8 bg-white dark:bg-dark-800 rounded-2xl shadow-soft"
         >
-          <h3 className="text-2xl font-bold text-dark-900 dark:text-dark-50 mb-4">
+          <h3 className="text-2xl font-bold text-black dark:text-black mb-4">
             {getText('servicesTitle')}
           </h3>
-          <p className="text-gray-600 dark:text-dark-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-black dark:text-black mb-6 max-w-2xl mx-auto">
             {getText('aboutDescription')}
           </p>
           <motion.button

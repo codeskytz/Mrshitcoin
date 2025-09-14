@@ -330,7 +330,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
       className={`mb-4 flex ${message.isBot ? 'justify-start' : 'justify-end'} group`}
     >
       <div className={`
-        relative max-w-[85%] md:max-w-[75%] p-4 rounded-2xl shadow-sm
+        relative max-w-[85%] md:max-w-[75%] sm:max-w-[95vw] p-4 rounded-2xl shadow-sm
         ${message.isBot
           ? 'bg-gray-100 dark:bg-dark-800 text-gray-800 dark:text-dark-100 mr-8'
           : 'bg-primary text-white ml-8'
@@ -459,11 +459,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="
-                fixed bottom-6 right-6 z-50 
-                w-96 md:w-[400px] h-[600px] max-h-[80vh]
+                fixed bottom-6 right-6 z-50
+                w-80 md:w-[340px] h-[480px] max-h-[70vh]
                 bg-white dark:bg-dark-900 rounded-2xl shadow-2xl
                 flex flex-col overflow-hidden border border-gray-200 dark:border-dark-700
-                max-md:bottom-0 max-md:right-0 max-md:left-0 max-md:w-full max-md:h-full max-md:rounded-none
+                max-md:bottom-0 max-md:right-0 max-md:left-0 max-md:w-[95vw] max-md:h-[70vh] max-md:rounded-none
+                sm:max-w-[95vw] sm:max-h-[70vh]
               "
               role="dialog"
               aria-labelledby="chat-title"
@@ -631,6 +632,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
                         bg-gray-50 dark:bg-dark-800 text-gray-900 dark:text-dark-100
                         placeholder-gray-500 dark:placeholder-dark-400
                         resize-none min-h-[44px] max-h-32
+                        sm:text-base sm:p-2
                       "
                       rows="1"
                       disabled={isLoading || isStreaming}
