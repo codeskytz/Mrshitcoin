@@ -5,7 +5,7 @@ const translations = {
   en: {
     // Navigation
     home: 'Home',
-    about: 'About',
+  myStory: 'My Story',
     services: 'Services',
     products: 'Products',
     contact: 'Contact',
@@ -25,9 +25,7 @@ const translations = {
     learnMore: 'Learn More',
     cryptoTrader: 'Professional Crypto Trader',
     
-    // About section
-    aboutTitle: 'About Us',
-    aboutDescription: 'We are a leading cryptocurrency platform dedicated to providing secure and efficient trading solutions.',
+  // ...existing code...
     ourMission: 'Our Mission',
     ourVision: 'Our Vision',
     missionText: 'To make cryptocurrency trading accessible and profitable for everyone',
@@ -69,7 +67,7 @@ const translations = {
   sw: {
     // Navigation
     home: 'Nyumbani',
-    about: 'Kuhusu',
+  myStory: 'Hadithi Yangu',
     services: 'Huduma',
     products: 'Bidhaa',
     contact: 'Wasiliana',
@@ -89,9 +87,7 @@ const translations = {
     learnMore: 'Jifunze Zaidi',
     cryptoTrader: 'Mchuuzi wa Kitaalamu wa Sarafu za Kidijitali',
     
-    // About section
-    aboutTitle: 'Kuhusu Sisi',
-    aboutDescription: 'Sisi ni jukwaa linaloongoza la sarafu za kidijitali linalojitoa kutoa suluhisho salama na za ufanisi za biashara.',
+  // ...existing code...
     ourMission: 'Dhamira Yetu',
     ourVision: 'Maono Yetu',
     missionText: 'Kufanya biashara ya sarafu za kidijitali kufikika na yenye faida kwa kila mtu',
