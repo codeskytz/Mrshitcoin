@@ -163,7 +163,8 @@ const Navbar = () => {
               onClick={closeMobileMenu}
             >
               <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-xl shadow-glow-sm group-hover:shadow-glow transition-all duration-300">
-                <span className="text-white font-bold text-lg sm:text-xl">M</span>
+                <span className="text-white font-bold text-lg sm:text-xl"><img src="https://i.ibb.co/6RhNLL05/images.png" alt="Mrshitcoin as a poorr guy" className="rounded-xl mb-4 w-full max-w-xs mx-auto" onError={e => { e.target.src = '/logo192.png'; }} />
+</span>
               </div>
               <span className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-dark-900 dark:text-dark-50 group-hover:text-primary transition-colors duration-300">
                 Mr Shitcoin
@@ -174,17 +175,35 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex">
             <div className="flex items-center space-x-1">
-              {/* Home page links */}
-              <NavLink to="home" label={getText('home')} isActive={activeSection === 'home'} onClick={closeMobileMenu} />
-              <NavLink to="products" label={getText('products')} isActive={activeSection === 'products'} onClick={closeMobileMenu} />
-              <NavLink to="services" label={getText('services')} isActive={activeSection === 'services'} onClick={closeMobileMenu} />
-              {/* My Story page link */}
-              <RouterLink to="/my-story" className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                My Story
-              </RouterLink>
-              <NavLink to="contact" label={getText('contact')} isActive={activeSection === 'contact'} onClick={closeMobileMenu} />
-              </div>);
+              {/* Show only Home and My Story on /my-story */}
+              {location.pathname === '/my-story' ? (
+                <>
+                  <RouterLink
+                    to="/"
+                    className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {getText('home')}
+                  </RouterLink>
+                  <span
+                    className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-primary bg-primary/10 shadow-inner-glow focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >
+                    My Story
+                  </span>
+                </>
+              ) : (
+                <>
+                  <NavLink to="home" label={getText('home')} isActive={activeSection === 'home'} onClick={closeMobileMenu} />
+                  <NavLink to="products" label={getText('products')} isActive={activeSection === 'products'} onClick={closeMobileMenu} />
+                  <NavLink to="services" label={getText('services')} isActive={activeSection === 'services'} onClick={closeMobileMenu} />
+                  <RouterLink to="/my-story" className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                    My Story
+                  </RouterLink>
+                  <NavLink to="contact" label={getText('contact')} isActive={activeSection === 'contact'} onClick={closeMobileMenu} />
+                </>
+              )}
             </div>
+          </div>
 
           {/* Right side controls */}
           <div className="flex items-center space-x-2 sm:space-x-3">
@@ -286,24 +305,47 @@ const Navbar = () => {
 
                   {/* Mobile Navigation Links */}
                   <nav className="space-y-1">
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0 } }}>
-                      <MobileNavLink to="home" label="Home" icon="🏠" isActive={activeSection === 'home'} onClick={closeMobileMenu} />
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}>
-                      <MobileNavLink to="products" label="Products" icon="📦" isActive={activeSection === 'products'} onClick={closeMobileMenu} />
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}>
-                      <MobileNavLink to="services" label="Services" icon="💼" isActive={activeSection === 'services'} onClick={closeMobileMenu} />
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}>
-                      <RouterLink to="/my-story" className="flex items-center space-x-3 px-4 py-4 rounded-2xl cursor-pointer transition-all duration-300 ease-out touch-manipulation min-h-[56px] select-none text-dark-600 dark:text-dark-300 hover:bg-gray-100 dark:hover:bg-dark-800 active:bg-gray-200 dark:active:bg-dark-700 text-base sm:text-lg">
-                        <span className="text-xl" role="img" aria-hidden="true">📖</span>
-                        <span className="font-medium text-base">My Story</span>
-                      </RouterLink>
-                    </motion.div>
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.4 } }}>
-                      <MobileNavLink to="contact" label="Contact" icon="📞" isActive={activeSection === 'contact'} onClick={closeMobileMenu} />
-                    </motion.div>
+                    {location.pathname === '/my-story' ? (
+                      <>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0 } }}>
+                          <RouterLink
+                            to="/"
+                            className="flex items-center space-x-3 px-4 py-4 rounded-2xl cursor-pointer transition-all duration-300 ease-out touch-manipulation min-h-[56px] select-none text-dark-600 dark:text-dark-300 hover:bg-gray-100 dark:hover:bg-dark-800 active:bg-gray-200 dark:active:bg-dark-700 text-base sm:text-lg"
+                            onClick={closeMobileMenu}
+                          >
+                            <span className="text-xl" role="img" aria-hidden="true">🏠</span>
+                            <span className="font-medium text-base">Home</span>
+                          </RouterLink>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}>
+                          <span className="flex items-center space-x-3 px-4 py-4 rounded-2xl cursor-pointer transition-all duration-300 ease-out touch-manipulation min-h-[56px] select-none bg-primary text-white shadow-glow text-base sm:text-lg">
+                            <span className="text-xl" role="img" aria-hidden="true">📖</span>
+                            <span className="font-medium text-base">My Story</span>
+                          </span>
+                        </motion.div>
+                      </>
+                    ) : (
+                      <>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0 } }}>
+                          <MobileNavLink to="home" label="Home" icon="🏠" isActive={activeSection === 'home'} onClick={closeMobileMenu} />
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}>
+                          <MobileNavLink to="products" label="Products" icon="📦" isActive={activeSection === 'products'} onClick={closeMobileMenu} />
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}>
+                          <MobileNavLink to="services" label="Services" icon="💼" isActive={activeSection === 'services'} onClick={closeMobileMenu} />
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}>
+                          <RouterLink to="/my-story" className="flex items-center space-x-3 px-4 py-4 rounded-2xl cursor-pointer transition-all duration-300 ease-out touch-manipulation min-h-[56px] select-none text-dark-600 dark:text-dark-300 hover:bg-gray-100 dark:hover:bg-dark-800 active:bg-gray-200 dark:active:bg-dark-700 text-base sm:text-lg">
+                            <span className="text-xl" role="img" aria-hidden="true">📖</span>
+                            <span className="font-medium text-base">My Story</span>
+                          </RouterLink>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.4 } }}>
+                          <MobileNavLink to="contact" label="Contact" icon="📞" isActive={activeSection === 'contact'} onClick={closeMobileMenu} />
+                        </motion.div>
+                      </>
+                    )}
                   </nav>
 
                   {/* Mobile CTA */}
@@ -336,27 +378,50 @@ const Navbar = () => {
   );
 };
 
-// Desktop Navigation Link Component (for scroll links)
-const NavLink = ({ to, label, isActive, onClick }) => (
-  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-    <ScrollLink
-      to={to}
-      smooth={true}
-      duration={500}
-      offset={-80}
-      onClick={onClick}
-      className={
-        'nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out ' +
-        (isActive ? 'text-primary bg-primary/10 shadow-inner-glow' : 'text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800') +
-        ' focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
-      }
-    >
-      {label}
-      {isActive && (
-        <motion.div layoutId="activeIndicator" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+// Desktop Navigation Link Component
+const NavLink = ({ to, label, isActive, onClick }) => {
+  const location = useLocation();
+  // Use ScrollLink only on home page, otherwise use RouterLink
+  const isHome = location.pathname === '/';
+  return (
+    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+      {isHome ? (
+        <ScrollLink
+          to={to}
+          smooth={true}
+          duration={500}
+          offset={-80}
+          onClick={onClick}
+          className={
+            'nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out ' +
+            (isActive ? 'text-primary bg-primary/10 shadow-inner-glow' : 'text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800') +
+            ' focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
+          }
+        >
+          {label}
+          {isActive && (
+            <motion.div layoutId="activeIndicator" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+          )}
+        </ScrollLink>
+      ) : (
+        <RouterLink
+          to={to === 'home' ? '/' : `/${to}`}
+          className={
+            'nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out ' +
+            (isActive ? 'text-primary bg-primary/10 shadow-inner-glow' : 'text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800') +
+            ' focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
+          }
+          onClick={onClick}
+        >
+          {label}
+          {isActive && (
+            <motion.div layoutId="activeIndicator" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+          )}
+        </RouterLink>
       )}
-    </ScrollLink>
-  </motion.div>);
+    </motion.div>
+  );
+};
 
 // Mobile Navigation Link Component
 const MobileNavLink = ({ to, label, icon, isActive, onClick }) => {
