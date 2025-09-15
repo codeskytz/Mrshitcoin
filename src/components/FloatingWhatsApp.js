@@ -3,8 +3,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const WHATSAPP_COLOR = '#25D366';
 
-const FloatingWhatsApp = ({ phone = '+255744088857', message = 'Hello!' }) => {
-  const href = `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+const FloatingWhatsApp = ({message = 'Hello!' }) => {
+  const href = `https://wa.me/+255744088857?text=${encodeURIComponent(message)}`;
 
   return (
     <a
