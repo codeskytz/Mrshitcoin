@@ -8,12 +8,12 @@ const videos = [
     description: 'Introductory lesson on meme coin trading strategies.',
   },
   {
-    id: '3S9X4G1a2bY',
+    id: 'GidIF32j25A?si',
     title: 'Advanced Signal Interpretation',
     description: 'Deeper dive into signal-based trading (placeholder id).',
   },
   {
-    id: 'xYzAbC12345',
+    id: '1eCkNT1pORM',
     title: 'Risk Management for Crypto',
     description: 'Practical risk controls and position sizing (placeholder id).',
   },

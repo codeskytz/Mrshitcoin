@@ -5,28 +5,28 @@ const bots = [
   {
     id: 'trojan',
     name: 'Trojan Bot',
-    image: 'https://i.ibb.co/7J5GJ6B/trojan.png',
+    image: 'https://img.step.finance/unsafe/s-1500/plain/https%3A%2F%2Fsf-cms.step.finance%2Fassets%2F627db62c-0c64-4447-b987-346a68a53648',
     description: 'High-frequency meme-coin scalper with adjustable risk profiles.',
     link: 'https://example.com/bots/trojan/start'
   },
   {
     id: 'phoenix',
     name: 'Phoenix Bot',
-    image: 'https://i.ibb.co/2d6Y9k9/phoenix.png',
+    image: 'https://phonixbot.com/app-assets/phonix.png',
     description: 'Trend-following bot optimized for volatile markets.',
     link: 'https://example.com/bots/phoenix/start'
   },
   {
     id: 'hydra',
     name: 'Hydra Bot',
-    image: 'https://i.ibb.co/Wxq9s5K/hydra.png',
+    image: 'https://cdn.dribbble.com/userupload/15079380/file/original-58ac0c14d85cff238b7aeeefe9064015.jpg?resize=1024x768&vertical=center',
     description: 'Multi-strategy bot with built-in signal aggregation.',
     link: 'https://example.com/bots/hydra/start'
   },
   {
     id: 'zeus',
     name: 'Zeus Bot',
-    image: 'https://i.ibb.co/3YgN0kL/zeus.png',
+    image: 'https://c.mql5.com/31/1388/zeus-market-god-logo-200x200-1753.png',
     description: 'Aggressive arbitrage and market-making bot.',
     link: 'https://example.com/bots/zeus/start'
   }

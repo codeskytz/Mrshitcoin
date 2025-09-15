@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { FaTelegramPlane, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -6,34 +7,36 @@ const socialLinks = [
   {
     name: 'Telegram',
     icon: FaTelegramPlane,
-    url: 'https://t.me/mrshitcoin',
+    url: 'https://t.me/mrshitcointz',
     color: '#37AEE2', // Telegram blue
   },
   {
     name: 'Twitter',
     icon: FaTwitter,
-    url: 'https://twitter.com/mrshitcoin',
+    url: 'https://twitter.com/mrshitcointz',
     color: '#1DA1F2', // Twitter blue
   },
   {
     name: 'Facebook',
     icon: FaFacebookF,
-    url: 'https://facebook.com/mrshitcoin',
+    url: 'https://facebook.com/mrshitcointz',
     color: '#1877F2', // Facebook blue
   },
   {
     name: 'Instagram',
     icon: FaInstagram,
-    url: 'https://instagram.com/mrshitcoin',
+    url: 'https://www.instagram.com/mrshitcointz/',
     color: '#E1306C', // Instagram-ish magenta
   },
 ];
 
 const SocialMedia = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8">Connect With Me</h2>
+        <h2 className={`text-3xl font-bold mb-8 ${isHome ? 'text-orange-500' : ''}`}>Connect With Me</h2>
         <div className="flex justify-center space-x-8 md:space-x-12">
           {socialLinks.map((social, index) => (
             <motion.a
