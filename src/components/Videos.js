@@ -1,0 +1,50 @@
+import React from 'react';
+
+const videos = [
+  {
+    id: 'dtrg4F4pRkc',
+    title: 'Crypto Trading Basics - Example Video',
+    description: 'Introductory lesson on meme coin trading strategies.',
+  },
+  {
+    id: '3S9X4G1a2bY',
+    title: 'Advanced Signal Interpretation',
+    description: 'Deeper dive into signal-based trading (placeholder id).',
+  },
+  {
+    id: 'xYzAbC12345',
+    title: 'Risk Management for Crypto',
+    description: 'Practical risk controls and position sizing (placeholder id).',
+  },
+];
+
+const Videos = () => (
+  <div className="min-h-screen bg-gradient-to-br from-white to-gray-100 dark:from-dark-900 dark:to-dark-950 py-16 px-4">
+    <div className="max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold mb-8 text-center text-primary">Video Courses</h1>
+      <p className="text-center mb-8 text-gray-700 dark:text-gray-300">Watch lessons directly on-site. We embed YouTube videos for convenient playback.</p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {videos.map(video => (
+          <div key={video.id} className="bg-white dark:bg-dark-900 shadow rounded-xl overflow-hidden">
+            <div className="relative pb-[56.25%]">{/* 16:9 ratio */}
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold text-primary mb-2">{video.title}</h3>
+              <p className="text-gray-700 dark:text-gray-300">{video.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+export default Videos;

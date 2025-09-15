@@ -13,6 +13,7 @@ import ChatBot from './components/ChatBot';
 import Footer from './components/Footer';
 import MyStory from './components/MyStory';
 import Books from './components/Books';
+import Videos from './components/Videos';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -40,6 +41,7 @@ function App() {
             } />
             <Route path="/my-story" element={<MyStory />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/videos" element={<Videos />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>
