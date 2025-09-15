@@ -44,6 +44,14 @@ const Products = () => {
 			navigate('/videos');
 			return;
 		}
+		if (title === 'Signal Groups') {
+			navigate('/signals');
+			return;
+		}
+		if (title === 'Trading Bots') {
+			navigate('/bots');
+			return;
+		}
 		// Add more category navigation logic here if needed
 	};
 

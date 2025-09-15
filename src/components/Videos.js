@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const videos = [
   {
@@ -19,7 +20,9 @@ const videos = [
 ];
 
 const Videos = () => (
-  <div className="min-h-screen bg-gradient-to-br from-white to-gray-100 dark:from-dark-900 dark:to-dark-950 py-16 px-4">
+  <>
+    <Navbar />
+    <div className="min-h-screen bg-gradient-to-br from-white to-gray-100 dark:from-dark-900 dark:to-dark-950 py-16 px-4">
     <div className="max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold mb-8 text-center text-primary">Video Courses</h1>
       <p className="text-center mb-8 text-gray-700 dark:text-gray-300">Watch lessons directly on-site. We embed YouTube videos for convenient playback.</p>
@@ -45,6 +48,8 @@ const Videos = () => (
       </div>
     </div>
   </div>
+  </>
 );
 
 export default Videos;
+

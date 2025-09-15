@@ -14,6 +14,9 @@ import Footer from './components/Footer';
 import MyStory from './components/MyStory';
 import Books from './components/Books';
 import Videos from './components/Videos';
+import Signals from './components/Signals';
+import Bots from './components/Bots';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -37,11 +40,14 @@ function App() {
                 <Statistics />
                 <ChatBot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
                 <Footer />
+                <FloatingWhatsApp phone="+1234567890" message="Hi, I have a question about your services" />
               </div>
             } />
             <Route path="/my-story" element={<MyStory />} />
             <Route path="/books" element={<Books />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/signals" element={<Signals />} />
+            <Route path="/bots" element={<Bots />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>
