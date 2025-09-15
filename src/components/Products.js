@@ -38,6 +38,11 @@ const Products = () => {
 	const handleLearnMore = (title) => {
 		if (title === 'Trading Books') {
 			navigate('/books');
+			return;
+		}
+		if (title === 'Video Courses') {
+			navigate('/videos');
+			return;
 		}
 		// Add more category navigation logic here if needed
 	};

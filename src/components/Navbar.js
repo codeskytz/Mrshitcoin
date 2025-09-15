@@ -28,6 +28,7 @@ const Navbar = () => {
   // Handle active section tracking
   // Only track active section on home page
   const location = useLocation();
+  const isBooks = location.pathname === '/books';
   useEffect(() => {
   if (location.pathname !== '/') return;
   const sections = ['home', 'products', 'contact'];
@@ -171,11 +172,9 @@ const Navbar = () => {
               </span>
             </Link>
           </motion.div>
-
           {/* Desktop Navigation */}
           <div className="hidden lg:flex">
             <div className="flex items-center space-x-1">
-              {/* Show only Home and My Story on /my-story */}
               {location.pathname === '/my-story' ? (
                 <>
                   <RouterLink
@@ -194,7 +193,9 @@ const Navbar = () => {
               ) : (
                 <>
                   <NavLink to="home" label={getText('home')} isActive={activeSection === 'home'} onClick={closeMobileMenu} />
-                  <NavLink to="products" label={getText('products')} isActive={activeSection === 'products'} onClick={closeMobileMenu} />
+                  {!isBooks && (
+                    <NavLink to="products" label={getText('products')} isActive={activeSection === 'products'} onClick={closeMobileMenu} />
+                  )}
                   <RouterLink to="/my-story" className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                     My Story
                   </RouterLink>
@@ -206,13 +207,10 @@ const Navbar = () => {
 
           {/* Right side controls */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            {/* Language Toggle */}
             <LanguageToggle />
-            {/* Theme Toggle */}
             <ThemeToggle className="hidden sm:flex" />
-            
-            {/* CTA Button - Desktop */}
-              {/* CTA removed (previously linked to services) */}
+
+            {/* Desktop CTA removed (previously linked to services) */}
 
             {/* Mobile menu button */}
             <motion.button
@@ -315,9 +313,11 @@ const Navbar = () => {
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0 } }}>
                           <MobileNavLink to="home" label="Home" icon="🏠" isActive={activeSection === 'home'} onClick={closeMobileMenu} />
                         </motion.div>
-                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}>
-                          <MobileNavLink to="products" label="Products" icon="📦" isActive={activeSection === 'products'} onClick={closeMobileMenu} />
-                        </motion.div>
+                        {!isBooks && (
+                          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}>
+                            <MobileNavLink to="products" label="Products" icon="📦" isActive={activeSection === 'products'} onClick={closeMobileMenu} />
+                          </motion.div>
+                        )}
                         {/* Services removed from mobile menu */}
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}>
                           <RouterLink to="/my-story" className="flex items-center space-x-3 px-4 py-4 rounded-2xl cursor-pointer transition-all duration-300 ease-out touch-manipulation min-h-[56px] select-none text-dark-600 dark:text-dark-300 hover:bg-gray-100 dark:hover:bg-dark-800 active:bg-gray-200 dark:active:bg-dark-700 text-base sm:text-lg">
