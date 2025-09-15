@@ -4,11 +4,11 @@ import Navbar from './Navbar';
 const books = [
   {
     id: 1,
-    title: 'Meme Coin Mastery',
+    title: 'Investing Mastery Bible',
     description: 'A deep dive into meme coin trading strategies and market psychology.',
     about: 'Written by the admin, this book covers everything from basics to advanced techniques for meme coin trading.',
     price: '$19.99',
-    coverImage: '/trader-image.jpg',
+    coverImage: 'https://i5.walmartimages.com/seo/Crypto-Investing-Mastery-Bible-7-BOOKS-IN-1-Cryptocurrency-Bitcoin-Ethereum-DeFi-NFTs-NFT-Art-and-Collectibles-Metaverse-Paperback-9781088052204_8384f9f9-ba4c-4532-940c-1d6404bf76b4.68b516ac34ab61afd38f9c0e49a27b98.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF',
     previewText: 'This book introduces core meme coin strategies, risk management techniques, and real-world examples to sharpen your trading edge.',
   },
   {
@@ -17,7 +17,7 @@ const books = [
     description: 'Learn how to interpret and act on crypto trading signals.',
     about: 'This book provides actionable insights and real-world examples for signal-based trading.',
     price: '$14.99',
-    coverImage: '/crypto-illustration.svg',
+    coverImage: 'https://m.media-amazon.com/images/I/612xNNpMmVL._SY425_.jpg',
     previewText: 'A practical guide to understanding signal sources, evaluating signal quality, and converting signals into profitable trades.',
   },
 ];

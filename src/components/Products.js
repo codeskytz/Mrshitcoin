@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpenIcon, VideoCameraIcon, BellIcon, CpuChipIcon } from '@heroicons/react/24/outline';
@@ -33,6 +34,8 @@ const products = [
 
 const Products = () => {
 	const { getText } = useContext(LanguageContext);
+	const location = useLocation();
+	const isHome = location.pathname === '/';
 	const navigate = useNavigate();
 
 	const handleLearnMore = (title) => {
@@ -59,7 +62,7 @@ const Products = () => {
 		<section className="py-20 px-4 bg-gray-50 dark:bg-dark-900">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-16">
-					<h2 className="text-4xl font-black text-black dark:text-black mb-4">
+					<h2 className={`text-4xl font-black mb-4 ${isHome ? 'text-orange-500' : 'text-black dark:text-black'}`}>
 						{getText('productsTitle')}
 					</h2>
 					<p className="text-black dark:text-black max-w-2xl mx-auto">

@@ -33,7 +33,7 @@ const Navbar = () => {
   const currentPageLabel = pageLabels[location.pathname] || '';
   useEffect(() => {
   if (location.pathname !== '/') return;
-  const sections = ['home', 'products', 'contact'];
+  const sections = ['home', 'products'];
     const sectionElements = sections.map(id => document.getElementById(id));
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
@@ -199,7 +199,6 @@ const Navbar = () => {
                   <RouterLink to="/my-story" className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-dark-600 dark:text-dark-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                     My Story
                   </RouterLink>
-                  <NavLink to="contact" label={getText('contact')} isActive={activeSection === 'contact'} onClick={closeMobileMenu} />
                 </>
               )}
             </div>
@@ -325,9 +324,7 @@ const Navbar = () => {
                             <span className="font-medium text-base">My Story</span>
                           </RouterLink>
                         </motion.div>
-                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.4 } }}>
-                          <MobileNavLink to="contact" label="Contact" icon="📞" isActive={activeSection === 'contact'} onClick={closeMobileMenu} />
-                        </motion.div>
+                        {/* Contact link removed per request */}
                       </>
                     )}
                   </nav>
