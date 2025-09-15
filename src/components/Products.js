@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpenIcon, VideoCameraIcon, BellIcon, CpuChipIcon } from '@heroicons/react/24/outline';
 import { LanguageContext } from '../contexts/LanguageContext';
@@ -32,6 +33,14 @@ const products = [
 
 const Products = () => {
 	const { getText } = useContext(LanguageContext);
+	const navigate = useNavigate();
+
+	const handleLearnMore = (title) => {
+		if (title === 'Trading Books') {
+			navigate('/books');
+		}
+		// Add more category navigation logic here if needed
+	};
 
 	return (
 		<section className="py-20 px-4 bg-gray-50 dark:bg-dark-900">
@@ -58,7 +67,7 @@ const Products = () => {
 							<h3 className="text-xl font-black mb-2 dark:font-black text-black dark:text-black">{product.title}</h3>
 							<p className="text-black font-semibold mb-6 dark:font-bold dark:text-black">{product.description}</p>
 							<div className="flex justify-center">
-								<button className="btn btn-outline w-full hover:btn-primary transition-all duration-300">
+								<button className="btn btn-outline w-full hover:btn-primary transition-all duration-300" onClick={() => handleLearnMore(product.title)}>
 									Learn More
 								</button>
 							</div>
