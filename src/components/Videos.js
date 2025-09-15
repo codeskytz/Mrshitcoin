@@ -4,18 +4,18 @@ import Navbar from './Navbar';
 const videos = [
   {
     id: 'dtrg4F4pRkc',
-    title: 'Crypto Trading Basics - Example Video',
-    description: 'Introductory lesson on meme coin trading strategies.',
+    title: 'Tengeneza 800 Dollar kwa mtaji wa dola 1 tu',
+    description: 'kuza mtaji wako kwa haraka kupitia shitcoin trading',
   },
   {
     id: 'GidIF32j25A?si',
-    title: 'Advanced Signal Interpretation',
-    description: 'Deeper dive into signal-based trading (placeholder id).',
+    title: 'Namna sahihi ya kuwekeza kwenye Shitcoin bila Hasara',
+    description: 'fahamu mbinu zilizonifanya kuwa millionare.',
   },
   {
     id: '1eCkNT1pORM',
-    title: 'Risk Management for Crypto',
-    description: 'Practical risk controls and position sizing (placeholder id).',
+    title: 'Jinsi ya ku trade Shitcoin',
+    description: 'Kila kitu unachohitaji kujua kuhusu shitcoin trading.',
   },
 ];
 
