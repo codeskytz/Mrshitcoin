@@ -6,13 +6,13 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Products from './components/Products';
-import Services from './components/Services';
 // ...existing code...
 import SocialMedia from './components/SocialMedia';
 import Statistics from './components/Statistics';
 import ChatBot from './components/ChatBot';
 import Footer from './components/Footer';
 import MyStory from './components/MyStory';
+import Books from './components/Books';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -31,9 +31,7 @@ function App() {
                 <Element name="products">
                   <Products />
                 </Element>
-                <Element name="services">
-                  <Services />
-                </Element>
+                {/* Services section removed */}
                 <SocialMedia />
                 <Statistics />
                 <ChatBot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
@@ -41,6 +39,7 @@ function App() {
               </div>
             } />
             <Route path="/my-story" element={<MyStory />} />
+            <Route path="/books" element={<Books />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>
