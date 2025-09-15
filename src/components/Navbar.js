@@ -8,27 +8,29 @@ import { LanguageContext } from '../contexts/LanguageContext';
 const Link = ScrollLink;
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  // Navbar is fixed and uses theme-aware background; do not change on scroll
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const mobileMenuRef = useRef(null);
   const { getText } = useContext(LanguageContext);
 
-  // Handle scroll effects
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 20;
-      setIsScrolled(scrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // We intentionally avoid changing navbar background/position on scroll so it stays
+  // constant across pages; theme switching will still change the colors via Tailwind classes.
 
   // Handle active section tracking
   // Only track active section on home page
   const location = useLocation();
   const isBooks = location.pathname === '/books';
+  const standalonePages = ['/books', '/videos', '/signals', '/bots', '/my-story'];
+  const isStandalone = standalonePages.includes(location.pathname);
+  const pageLabels = {
+    '/books': 'Books',
+    '/videos': 'Video Courses',
+    '/signals': 'Signal Groups',
+    '/bots': 'Trading Bots',
+    '/my-story': 'My Story'
+  };
+  const currentPageLabel = pageLabels[location.pathname] || '';
   useEffect(() => {
   if (location.pathname !== '/') return;
   const sections = ['home', 'products', 'contact'];
@@ -142,9 +144,7 @@ const Navbar = () => {
       variants={navVariants}
       className={
         'fixed top-0 left-0 right-0 z-100 transition-all duration-300 ease-out ' +
-        (isScrolled
-          ? 'bg-white/95 dark:bg-dark-900/95 backdrop-blur-md shadow-soft border-b border-gray-200/50 dark:border-dark-700/50'
-          : 'bg-transparent')
+        'bg-white/95 dark:bg-dark-900/95 backdrop-blur-md shadow-soft border-b border-gray-200/50 dark:border-dark-700/50'
       }
     >
       <div className="max-w-8xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -175,7 +175,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex">
             <div className="flex items-center space-x-1">
-              {location.pathname === '/my-story' ? (
+              {isStandalone ? (
                 <>
                   <RouterLink
                     to="/"
@@ -187,7 +187,7 @@ const Navbar = () => {
                   <span
                     className="nav-link relative px-4 py-2 rounded-xl text-sm font-medium cursor-pointer transition-all duration-300 ease-out text-primary bg-primary/10 shadow-inner-glow focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   >
-                    My Story
+                    {currentPageLabel}
                   </span>
                 </>
               ) : (
@@ -289,7 +289,7 @@ const Navbar = () => {
 
                   {/* Mobile Navigation Links */}
                   <nav className="space-y-1">
-                    {location.pathname === '/my-story' ? (
+                    {isStandalone ? (
                       <>
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0 } }}>
                           <RouterLink
@@ -303,8 +303,8 @@ const Navbar = () => {
                         </motion.div>
                         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.1 } }}>
                           <span className="flex items-center space-x-3 px-4 py-4 rounded-2xl cursor-pointer transition-all duration-300 ease-out touch-manipulation min-h-[56px] select-none bg-primary text-white shadow-glow text-base sm:text-lg">
-                            <span className="text-xl" role="img" aria-hidden="true">📖</span>
-                            <span className="font-medium text-base">My Story</span>
+                            <span className="text-xl" role="img" aria-hidden="true">�</span>
+                            <span className="font-medium text-base">{currentPageLabel}</span>
                           </span>
                         </motion.div>
                       </>

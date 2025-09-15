@@ -203,34 +203,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Trust Indicators */}
-            <motion.div
-              variants={itemVariants}
-              className="pt-8 border-t border-gray-200 dark:border-dark-700"
-            >
-              <p className="text-sm text-dark-500 dark:text-dark-400 mb-4 text-center lg:text-left">
-                {getText('aboutDescription')}
-              </p>
-              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 opacity-60">
-                {/* Trust badges/logos would go here */}
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-success rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium">Verified Expert</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium">5★ Rated</span>
-                </div>
-              </div>
-            </motion.div>
+            {/* Trust Indicators removed per request */}
           </div>
 
           {/* Hero Image */}
@@ -249,6 +222,7 @@ const Hero = () => {
                            transition-all duration-500
                            hover:scale-102 hover:drop-shadow-xl
                            object-contain"
+                  style={{ marginTop: '56px' }}
                   loading="eager"
                   decoding="async"
                 />
@@ -302,37 +276,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: prefersReducedMotion ? 0 : 2, duration: prefersReducedMotion ? 0.1 : 0.8 }}
-      >
-        <button
-          onClick={() => {
-            const aboutElement = document.getElementById('about');
-            aboutElement?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          className="flex flex-col items-center space-y-2 text-dark-400 hover:text-primary
-                   transition-colors duration-300 focus:outline-none focus:text-primary
-                   touch-manipulation select-none p-2"
-          aria-label="Scroll to about section"
-        >
-          <span className="text-sm font-medium">Scroll Down</span>
-          <motion.svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            animate={prefersReducedMotion ? {} : { y: [0, 4, 0] }}
-            transition={prefersReducedMotion ? {} : { duration: 2, repeat: Infinity }}
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </motion.svg>
-        </button>
-      </motion.div>
+      {/* Scroll indicator removed per request */}
     </section>
   );
 };
